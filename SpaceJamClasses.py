@@ -65,7 +65,7 @@ class Missile(SphereCollideObject):
         print("Fire torpedo #" + str(Missile.missileCount))
 class Orbiter(SphereCollideObject):
     numOrbits = 0
-    velocity = 0.005
+    velocity = 0.01
     cloudTimer = 240
     def __init__(self, loader: Loader, taskMgr: TaskManager, modelPath: str, parentNode: NodePath, nodeName: str, scaleVec: Vec3, texPath: str, centralObject: PlacedObject, orbitRadius: float, orbitType: str, staringAt: Vec3):
         super(Orbiter, self,).__init__(loader, modelPath, parentNode, nodeName, Vec3(0, 0, 0), 2.0)
@@ -84,7 +84,7 @@ class Orbiter(SphereCollideObject):
         taskMgr.add(self.Orbit, self.taskFlag)
     def Orbit(self, task):
         if self.orbitType == "MLB":
-            positionVec = defensePaths.BaseballSeams(task.time * Orbiter.velocity, self.numOrbits, 2.0)
+            positionVec = defensePaths.BaseballSeams(task.time * Orbiter.velocity, self.numOrbits, 3.0)
             self.modelNode.setPos(positionVec * self.orbitRadius + self.orbitObject.modelNode.getPos())
         
         elif self.orbitType == "Cloud":

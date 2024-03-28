@@ -28,10 +28,10 @@ class SphereCollideObject(CollidableObject):
     def __init__(self, loader: Loader, modelPath: str, parentNode: NodePath, nodeName: str, colPositionVec: Vec3, colRadius: float):
         super(SphereCollideObject, self).__init__(loader, modelPath, parentNode, nodeName)
         self.collisionNode.node().addSolid(CollisionSphere(colPositionVec, colRadius))
-        self.collisionNode.show()
+        #self.collisionNode.show()
 class CapsuleCollidableObject(CollidableObject):
     # a and b are respectively the furthest point on a capsule collider on either side.
     def __init__(self, loader: Loader, modelPath: str, parentNode: NodePath, nodeName: str, ax: float, ay: float, az: float, bx: float, by: float, bz: float, r: float):
         super(CapsuleCollidableObject, self).__init__(loader, modelPath, parentNode, nodeName)
         self.collisionNode.node().addSolid(CollisionCapsule(ax, ay, az, bx, by, bz, r))
-        self.collisionNode.show()
+        #self.collisionNode.show()

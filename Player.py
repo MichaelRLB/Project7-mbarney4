@@ -57,7 +57,7 @@ class Player(SphereCollideObject):
         else:
             self.taskManager.remove('forward-thrust')
     def ApplyThrust(self, task):
-        rate = 15
+        rate = 20
         trajectory = self.renderer.getRelativeVector(self.modelNode, Vec3.forward())
         trajectory.normalize()
         self.modelNode.setFluidPos(self.modelNode.getPos() + trajectory * rate)

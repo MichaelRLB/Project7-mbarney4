@@ -105,16 +105,16 @@ class SpaceJam(ShowBase): #Constructor
         self.Player = myPlayer.Player(self.loader, "./Assets/Player/theBorg.x", self.render, 'Player', "Assets/Player/theBorg.jpg", (150, 1500, 67), 5, self.taskMgr, self.render, self.accept, self.traverser)
 
         # Space station setup
-        self.Station = spaceJamClasses.Station(self.loader, "./Assets/SpaceStation1B/spaceStation.x", self.render, 'Station', "Assets/SpaceStation1B/SpaceStation1_Dif2.png", (-1500, 8000, 100), 100)
+        self.Station = spaceJamClasses.Station(self.loader, "./Assets/SpaceStation1B/spaceStation.x", self.render, 'Station', "Assets/SpaceStation1B/SpaceStation1_Dif2.png", (-1500, 10000, 100), 100)
 
         # Planet 1 setup
         self.Planet1 = spaceJamClasses.Planet(self.loader, "./Assets/Planets/protoPlanet.x", self.render, 'Planet1', "Assets/Planets/planet1.jpg", (350, 5000, 67), 350)
 
         # Planet 2 setup
-        self.Planet2 = spaceJamClasses.Planet(self.loader, "./Assets/Planets/protoPlanet.x", self.render, 'Planet2', "Assets/Planets/planet2.jpg", (1500, -5000, 67), 350)
+        self.Planet2 = spaceJamClasses.Planet(self.loader, "./Assets/Planets/protoPlanet.x", self.render, 'Planet2', "Assets/Planets/planet2.jpg", (1500, -2000, 67), 350)
 
         # Planet 3 setup
-        self.Planet3 = spaceJamClasses.Planet(self.loader, "./Assets/Planets/protoPlanet.x", self.render, 'Planet3', "Assets/Planets/planet3.jpg", (-1000, -5000, 100), 350)
+        self.Planet3 = spaceJamClasses.Planet(self.loader, "./Assets/Planets/protoPlanet.x", self.render, 'Planet3', "Assets/Planets/planet3.jpg", (-1000, -3000, 100), 350)
 
         # Planet 4 setup
         self.Planet4 = spaceJamClasses.Planet(self.loader, "./Assets/Planets/protoPlanet.x", self.render, 'Planet4', "Assets/Planets/planet4.jpg", (-1500, 3000, -67), 350)      
@@ -125,10 +125,11 @@ class SpaceJam(ShowBase): #Constructor
         # Planet 6 setup
         self.Planet6 = spaceJamClasses.Planet(self.loader, "./Assets/Planets/protoPlanet.x", self.render, 'Planet6', "Assets/Planets/planet6.jpg", (-650, 5000, 67), 350)
 
-        # Fix this code later (why is the missile crashing the program when it hits a drone at planet 1? How do I make the drone bigger without changing the hitbox?)
-        self.Sentinal1 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./Assets/Drones/JulesVerne.obj", self.render, "Drone", 20.0, "./Assets/Drones/Textures/sh3.jpg", self.Planet2, 900, "MLB", self.Player)
-        self.Sentinal2 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./Assets/Drones/JulesVerne.obj", self.render, "Drone", 20.0, "./Assets/Drones/Textures/sh3.jpg", self.Planet3, 900, "MLB", self.Player)
-        self.Sentinal3 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./Assets/Drones/JulesVerne.obj", self.render, "Drone", 50.0, "./Assets/Drones/Textures/sh3.jpg", self.Planet1, 500, "MLB", self.Player)
+        # Drone pattern setup (don't put anything on planet 1 except for testing purposes) (fix missile problems)
+        self.Sentinal1 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./Assets/Drones/JulesVerne.obj", self.render, "Drone201", 80.0, "./Assets/Drones/Textures/sh3.jpg", self.Planet1, 500, "MLB", self.Player)
+        self.Sentinal2 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./Assets/Drones/JulesVerne.obj", self.render, "Drone202", 80.0, "./Assets/Drones/Textures/sh3.jpg", self.Planet2, 500, "Cloud", self.Player)
+        self.Sentinal3 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./Assets/Drones/JulesVerne.obj", self.render, "Drone203", 80.0, "./Assets/Drones/Textures/sh3.jpg", self.Planet3, 500, "Cloud", self.Player)
+        self.Sentinal4 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./Assets/Drones/JulesVerne.obj", self.render, "Drone204", 80.0, "./Assets/Drones/Textures/sh3.jpg", self.Planet4, 500, "MLB", self.Player)
 
 
 
